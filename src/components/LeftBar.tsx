@@ -1,5 +1,4 @@
 import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Box, Switch } from '@mui/material'
-
 import {
     AccountBox,
     Article,
@@ -11,10 +10,19 @@ import {
     Storefront,
 } from "@mui/icons-material";
 
-const LeftBar = () => {
+interface propsType {
+    width: number
+}
+
+const LeftBar = (porps: propsType) => {
     return (
-        <Box width="100%" sx={{ position: "fixed", width: "100%" }}>
-            <Box >
+        <Box sx={{ width: porps.width }}>
+            <Box sx={{
+                position: "fixed",
+                // top: 50,
+                width: "inherit"
+            }}
+            >
                 <List>
                     <ListItem disablePadding>
                         <ListItemButton component="a" href="#home">
@@ -82,7 +90,7 @@ const LeftBar = () => {
                     </ListItem>
                 </List>
             </Box>
-        </Box>
+        </Box >
     )
 }
 
