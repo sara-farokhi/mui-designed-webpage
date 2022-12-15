@@ -29,7 +29,7 @@ const SearchBox = styled(Box)(({ theme }) => ({
 
 const TopBar = () => {
     return (
-        <AppBar position="static">
+        <AppBar position="sticky">
             <Toolbar>
                 <FlexBox>
                     <Stack direction="row" gap={1} alignItems="center" >
