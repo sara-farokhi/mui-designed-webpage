@@ -40,7 +40,6 @@ const TopBar = () => {
                     <SearchBox>
                         <SearchIcon sx={{ color: "grey", m: 1 }} />
                         <InputBase placeholder='search ....'></InputBase>
-
                     </SearchBox>
 
                     <Stack direction="row" gap={1} alignItems="center" sx={{ display: { xs: "none", sm: "flex" } }} >
@@ -50,11 +49,9 @@ const TopBar = () => {
                         <Badge badgeContent={10} color="error">
                             <NotificationsIcon />
                         </Badge>
-                        <Avatar sx={{ m:1 }} alt="Remy Sharp" src={`${process.env.PUBLIC_URL}/assets/user.png`} />
-
+                        <Avatar sx={{ m: 1 }} alt="Remy Sharp" src={`${process.env.PUBLIC_URL}/assets/user.png`} />
                     </Stack>
                 </FlexBox>
-
             </Toolbar>
         </AppBar>
 
