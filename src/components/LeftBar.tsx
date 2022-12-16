@@ -1,4 +1,4 @@
-import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Box, Switch } from '@mui/material'
+import { List, ListItem, ListItemButton, ListItemIcon, ListItemText, Box, Switch, PaletteMode } from '@mui/material'
 import {
     AccountBox,
     Article,
@@ -9,12 +9,23 @@ import {
     Settings,
     Storefront,
 } from "@mui/icons-material";
+// import theme from '../theme';
 
 interface propsType {
-    width: number
+    width: number,
+    mode: PaletteMode|undefined,
+    setMode: React.Dispatch<React.SetStateAction<PaletteMode | undefined>>
 }
 
+
+
 const LeftBar = (porps: propsType) => {
+    const mode = porps.mode
+    const setMode = porps.setMode
+    const changeMode = () => {
+        setMode(mode === "light" ? "dark" : "light")
+    }
+
     return (
         <Box sx={{ width: porps.width }}>
             <Box sx={{
@@ -85,7 +96,9 @@ const LeftBar = (porps: propsType) => {
                             <ListItemIcon>
                                 <ModeNight />
                             </ListItemIcon>
-                            <Switch />
+                            <Switch
+                            onChange={changeMode}
+                            />
                         </ListItemButton>
                     </ListItem>
                 </List>
